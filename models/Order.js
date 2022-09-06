@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose = required('mongoose');
 
 const OrderSchema = new mongoose.Schema({
     userId: {
         type:String,
-        require:true,
+        required:true,
     },
     products:[
         {
@@ -18,11 +18,11 @@ const OrderSchema = new mongoose.Schema({
     ],
     ammount: {
         type: Number,
-        required: true,
+        requiredd: true,
     },
     addrees:{
         type: Object,
-        required:true,
+        requiredd:true,
     },
     status:{
         type: String,
