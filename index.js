@@ -1,22 +1,24 @@
 const express = require('express');
+const PORT = 5000;
 const app = express();
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 const userRoute = require('./routes/user');
-
-dotenv.config();
-
+const authRoute = require('./routes/auth');
 
 
-mongoose.connect(process.env.MONGO_URL)
-.then(()=>
-    console.log('DB Connection Successfull!')).catch((err)=>
-    console.log(err));
+//------------ DB Configuration ------------//
+const db = require('./config/key').MongoURI;
+
+//------------ Mongo Connection ------------//
+mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("Successfully connected to MongoDB"))
+    .catch(err => console.log(err));
 
 app.use(express.json());
+app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 
-app.listen(process.env.PORT || 5000,()=>{
-    console.log(`Backend Server running on PORT `);
+app.listen(PORT,()=>{
+    console.log(`Backend Server running on PORT ${PORT}`);
 })
 
