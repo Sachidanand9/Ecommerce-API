@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
+
+//This is product schema
 const ProductSchema = new mongoose.Schema({
     id:{
         type:Number,
-        
     },
     name: {
         type:String,
