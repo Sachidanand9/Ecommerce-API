@@ -11,11 +11,11 @@ GET | /products
 
 POST | /products/create
 
-id = value
+id : value
 
-name value
+name : value
 
-quantity value
+quantity: value
 
 * Delete Product
 
