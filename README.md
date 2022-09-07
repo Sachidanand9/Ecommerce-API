@@ -11,11 +11,11 @@ GET | /products
 
 POST | /products/create
 
-id 1
+id = value
 
-name Product 1
+name value
 
-quantity 50
+quantity value
 
 * Delete Product
 
@@ -26,3 +26,5 @@ DELETE | /products/id
 POST | /products/id
 
 For updating particuler Schema 
+
+
