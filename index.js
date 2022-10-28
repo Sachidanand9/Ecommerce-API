@@ -1,8 +1,8 @@
 const express = require('express');
-const PORT = 5000;
 const app = express();
 const mongoose = require("mongoose");
 const productRoute = require("./routes/product");
+const PORT = process.env.PORT || 8000;
 
 
 //------------ DB Configuration ------------//
